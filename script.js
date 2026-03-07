@@ -145,21 +145,21 @@ const projectsData = [
         category: "scratch",
         language: "Scratch",
         image: "/images/2048.png",
-        code: "https://scratch.mit.edu/projects/1191328879/fullscreen",
+        preview: "https://scratch.mit.edu/projects/1191328879/fullscreen",
     },
     {
         name: "Balloon pop game",
         category: "scratch",
         language: "Scratch",
         image: "/images/balloon.png",
-        code: "https://scratch.mit.edu/projects/1189546502/fullscreen/",
+        preview: "https://scratch.mit.edu/projects/1189546502/fullscreen/",
     },
     {
         name: "Analog & digital clock",
         category: "scratch",
         language: "Scratch",
         image: "/images/clock.png",
-        code: "https://scratch.mit.edu/projects/1185640453/fullscreen/",
+        preview: "https://scratch.mit.edu/projects/1185640453/fullscreen/",
     },
 ];
 
@@ -187,7 +187,7 @@ function renderProjects(category) {
                     <div class="project-buttons">
                         ${project.preview ? `<a href="${project.preview}" class="btn btn-primary" target="_blank">Preview</a>` : ""}
                         ${project.verticalImage ? `<button class="btn btn-primary view-vertical" data-img="${project.verticalImage}">View</button>` : ""}
-                        <a href="${project.code}" class="btn btn-secondary" target="_blank">Code</a>
+                        ${project.code ?`<a href="${project.code}" class="btn btn-secondary" target="_blank">Code</a>`:""}
                     </div>
                 </div>
             </div>
