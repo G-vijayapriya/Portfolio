@@ -119,7 +119,7 @@ const projectsData = [
 
     // Extension
     {
-        name: "Productivity Chrome Extension",
+        name: "Notes Making",
         category: "extension",
         language: "JavaScript",
         image:
