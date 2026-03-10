@@ -142,7 +142,7 @@ ul {
     display: flex;
     align-items: center;
     min-height: 2.8rem;
-    margin: 1rem  0;
+    margin: 1rem 0;
 }
 
 .hero-role {
@@ -223,11 +223,13 @@ ul {
     position: relative;
     animation: float 5s ease-in-out infinite;
 }
-@media (max-width: 900px){
-.nav-container.container {
-    padding: 0.7rem;
+
+@media (max-width: 900px) {
+    .nav-container.container {
+        padding: 0.7rem;
+    }
 }
-}
+
 @keyframes float {
 
     0%,
@@ -474,6 +476,27 @@ ul {
 /* Vertical project card support */
 .project-card.vertical .project-img-wrapper {
     aspect-ratio: 9 / 16;
+}
+
+/* Scratch project full image support */
+.project-card.scratch .project-img-wrapper,
+.project-card.mobile .project-img-wrapper {
+    aspect-ratio: 16 / 9;
+    background-color: var(--surface-color);
+}
+
+.project-card.scratch .project-img,
+.project-card.mobile .project-img {
+    object-fit: cover;
+    object-position: center top;
+    /* Show top portion without gaps */
+}
+
+/* Specific adjustments for certain projects */
+.project-card.project-mini-calculator .project-img,
+.project-card.project-2048-game .project-img {
+    object-position: center bottom;
+    /* Show bottom portion without gaps */
 }
 
 .project-hover-overlay {

@@ -133,7 +133,7 @@ const projectsData = [
         category: "mobile",
         language: "Kotlin",
         image:
-            "images/mobiledev.jpg",
+            "images/mobiledev1.jpg",
         verticalImage: "images/mobiledev.jpg",
         preview: "",
         code: "https://github.com/G-vijayapriya/miniCalculator",
@@ -178,7 +178,8 @@ function renderProjects(category) {
 
     filtered.forEach((project) => {
         const card = document.createElement("div");
-        card.className = project.isVertical ? "project-card vertical" : "project-card";
+        const nameClass = 'project-' + project.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        card.className = `project-card ${project.category} ${nameClass} ${project.isVertical ? "vertical" : ""}`;
 
         card.innerHTML = `
             <div class="project-img-wrapper">
@@ -187,7 +188,7 @@ function renderProjects(category) {
                     <div class="project-buttons">
                         ${project.preview ? `<a href="${project.preview}" class="btn btn-primary" target="_blank">Preview</a>` : ""}
                         ${project.verticalImage ? `<button class="btn btn-primary view-vertical" data-img="${project.verticalImage}">View</button>` : ""}
-                        ${project.code ?`<a href="${project.code}" class="btn btn-secondary" target="_blank">Code</a>`:""}
+                        ${project.code ? `<a href="${project.code}" class="btn btn-secondary" target="_blank">Code</a>` : ""}
                     </div>
                 </div>
             </div>
@@ -280,7 +281,7 @@ const revealCards = () => {
 const typeEffect = () => {
     const el = document.getElementById("typing-text");
     if (!el) return;
-    const text = "Trained As Full Stack Developer";
+    const text = "Learning Through Building";
     let i = 0;
     let deleting = false;
 
